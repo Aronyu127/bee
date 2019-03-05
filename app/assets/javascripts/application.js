@@ -12,5 +12,7 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require gentelella
+//= require gentelella-custom
 //= require turbolinks
 //= require_tree .

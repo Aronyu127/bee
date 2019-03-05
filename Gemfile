@@ -34,6 +34,7 @@ gem 'devise'
 
 # view rendering
 gem 'simple_form'
+gem 'gentelella-rails'
 
 # DB
 gem 'activerecord-postgis-adapter'
