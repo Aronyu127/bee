@@ -7,10 +7,10 @@
 <!-- menu profile quick info -->
 <div class="profile clearfix">
   <div class="profile_pic">
-    
+    <%= image_tag 'https://www.choicemedwaste.com/wp-content/uploads/default-user-avatar-dc6f2da9-300x300.gif', class: "img-circle profile_img"%>
   </div>
   <div class="profile_info">
-    <span>Welcome,</span>
+    <span>Welcome, <%= current_user.name %></span>
     
   </div>
 </div>

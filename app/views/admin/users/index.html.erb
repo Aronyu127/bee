@@ -1,0 +1,62 @@
+<div>
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Users</h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <br>
+        <div class='dataTables_wrapper'>
+          <div class='table-responsive'>
+            <table class="table nowrap table-bordered table-striped table-hover js-datatable "data-table-options=''">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Email</th>
+                  <th>Admin</th>
+                  <th>is_vip</th>
+                  <th>create_at</th>
+                  <th>action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @users.each do |user| %>
+                  <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.admin %></td>
+                    <td><%= user.vip? %></td>
+                    <td><%= user.created_at %></td>
+                    <td>
+                      <% unless user.admin %>
+                        <%= link_to 'set to admin', admin_user_path(id: user.id, user: { admin: true }), method: :put, class: 'btn btn-danger', "data-confirm": "are you sure to set this user to admin？" %>
+                      <% end %>
+                    </td>
+
+                  </tr>
+                <% end %>
+              </tbody>
+              <div class='row'>
+                <div class='col-sm-4'>
+                  <div class='dataTables_info'>
+                    Total: <%= @users.try(:total_count) || @users.size %>
+                  </div>
+                </div>
+                <div class='col-sm-8 pull-right'>
+                  <div class='dataTables_paginate paging_simple_numbers'>
+                    <% if @users.respond_to?(:total_count) %>
+                      <%= paginate @users %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
