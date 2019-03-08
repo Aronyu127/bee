@@ -1,0 +1,57 @@
+<% content_for :title do%>
+  Product <%= @product.name%>
+<% end %>
+<% content_for :btn do%>
+  <%= render partial: "btns", object: @product, as: :product %>
+<% end %>
+
+<div class="row">
+  <%= admin_widget_box "Product #{@product.name} ##{@product.id}" do %>
+    <table class="table table-bordered table-striped table-hover">
+      <tbody>
+        <tr>
+          <td>ID</td>
+          <td><%= @product.id %></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><%= @product.name %></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td><%= @product.description %></td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td><%= @product.price %></td>
+        </tr>
+        <tr>
+          <td>Vip Price</td>
+          <td><%= @product.vip_price %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+  <%= admin_widget_box "Pics" do %>
+    <div class="dataTables_wrapper">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>File</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @pics %>
+            <% @pics.each do |pic|%>
+              <tr>
+                <td><%= pic.id%></td>
+                <td><%= image_tag pic.file.middle.url %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>

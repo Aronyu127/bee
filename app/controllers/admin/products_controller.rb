@@ -6,6 +6,10 @@ module Admin
       @products = Product.all.order('id DESC').page(params[:page]).per(30)
     end
 
+    def show
+      @pics = @product.pics.presence
+    end
+
     def new
       @product.pics.build
     end

@@ -16,3 +16,18 @@
 
 @import "gentelella";
 @import "gentelella-custom";
+
+
+.inform-image {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 12px;
+}
+
+.remove_pic_button {
+  display: inline-block
+}
+
+input[type="file"] {
+  display: inline;
+}

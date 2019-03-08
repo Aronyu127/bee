@@ -1,3 +1,6 @@
+<% content_for :title do%>
+  New Product
+<% end %>
 <div class="row">
   <%= admin_widget_box "New product" do %>
     <%= admin_form_for @product, url:  admin_products_path, method: :post do |f|%>

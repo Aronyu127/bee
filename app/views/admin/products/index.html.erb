@@ -1,5 +1,5 @@
 <%= content_for :title do%>
-  Product
+  Products
 <% end%>
 <%= append_page_button "New product", new_admin_product_path, class: "btn btn-primary"%>
 <div class="row">
@@ -31,6 +31,7 @@
             <td><%= product.vip_price %></td>
             <td><%= product.updated_at %></td>
             <td>
+              <%= link_to "Show", admin_product_path(product), class: "btn btn-mini btn-default"%>
               <%= link_to "Edit", edit_admin_product_path(product), class: "btn btn-mini btn-success"%>
               <%= link_to "Delete", admin_product_path(product), class: "btn btn-large btn-danger", method: :delete, "data-confirm" => "Are you sure you want to delete this product？"%>
             </td>
