@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # view rendering
+gem 'cocoon'
 gem 'gentelella-rails'
 gem 'kaminari'
 gem 'simple_form'
@@ -40,6 +41,10 @@ gem 'simple_form'
 # DB
 gem 'activerecord-postgis-adapter'
 gem 'pg'
+
+# file upload
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -49,8 +54,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails', '~> 4.10'
+  gem 'pry-remote'
   gem 'rspec-rails'
   gem 'rubocop'
 end

@@ -1,0 +1,10 @@
+<div class="nested-fields">
+  <% if f.object.new_record? %>
+    <%= f.input :file, as: :file %>  
+  <% else %>
+    <%= f.label 'uploaded file' %>
+    <%= image_tag f.object.file.middle.url %>
+  <% end %>
+  <%= link_to_remove_association 'remove pic', f %>
+</div>
+

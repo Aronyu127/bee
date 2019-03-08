@@ -1,0 +1,14 @@
+<div class='row'>
+  <div class='col-sm-4'>
+    <div class='dataTables_info'>
+      Total: <%= collection.try(:total_count) || collection.size %>
+    </div>
+  </div>
+  <div class='col-sm-8 pull-right'>
+    <div class='dataTables_paginate paging_simple_numbers'>
+      <% if collection.respond_to?(:total_count) %>
+        <%= paginate collection %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="row">
+  <%= admin_widget_box "New product" do %>
+    <%= admin_form_for @product, url:  admin_products_path, method: :post do |f|%>
+      <%= render partial: "form", object: f, as: :f %>
+    <% end %>
+  <% end %>
+</div>

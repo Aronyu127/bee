@@ -15,4 +15,5 @@
 //= require gentelella
 //= require gentelella-custom
 //= require turbolinks
+//= require cocoon
 //= require_tree .
