@@ -10,5 +10,24 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_tree ./admin
  *= require_self
  */
+
+@import "gentelella";
+@import "admin/gentelella-custom";
+
+
+.inform-image {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 12px;
+}
+
+.remove_pic_button {
+  display: inline-block
+}
+
+input[type="file"] {
+  display: inline;
+}
