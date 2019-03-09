@@ -13,6 +13,9 @@
 
 FactoryBot.define do
   factory :product do
-
+    name 'test product'
+    description 'prdouct description'
+    price 150
+    vip_price 140   
   end
 end

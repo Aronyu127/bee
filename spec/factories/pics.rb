@@ -12,6 +12,7 @@
 
 FactoryBot.define do
   factory :pic do
-
+    item { create :product }
+    file { File.open(Rails.root.join('spec', 'fixtures', ['product_pic.jpg', 'product_pic1.jpg', 'product_pic2.jpg'].sample)) }
   end
 end
