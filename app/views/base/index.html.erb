@@ -1,1 +1,146 @@
-<h1>hello world</h1>
+<div id="content">
+  <div class="slider">
+    <img src="http://placeimg.com/1920/1080" alt="slider" />
+  </div>
+
+  <div class="recent-product">
+    <div class="container">
+
+      <div class="intro">
+        <h2>recent product</h2>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, voluptatum.</p>
+      </div>
+
+      <div class="products">
+        <ul class="row clearfix">
+          <% @products.each do |product| %>
+            <li class="product col-4">
+              <div class="flexslider thumbnail">
+                <ul class="slides">
+                  <% if product.pics.any? %>
+                    <% product.pics.each do |pic|%>
+                      <li>
+                        <%= image_tag pic.file.middle.url %>
+                      </li>    
+                    <% end %>
+                  <% else %>
+                    <li>
+                      <img src="http://placeimg.com/370/277" />
+                    </li>     
+                  <% end %>
+                </ul>
+              </div>
+              <div class="info">
+                <h3 class="title">
+                  <a href="#"><%= product.name%></a>
+                </h3>
+                <% price = current_user && current_user.vip? ? "Vip price #{product.vip_price}" : product.price %>
+                <div class="price">$ <%= price%></div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="container">
+
+      <h1 class="title">30% discount</h1>
+      <h3 class="subtitle">for this summer only</h3>
+
+      <a href="#" class="button">shop now</a>
+
+    </div>
+  </div>
+
+  <div class="featured">
+    <div class="container clearfix">
+
+      <div class="col-6">
+        <img src="http://placeimg.com/525/453" alt="product" />
+      </div>
+      <div class="col-6 info">
+        <div class="title">featured item</div>
+        <h3 class="name">antic single sofa</h3>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, laborum, cum vero nisi non voluptatum.</p>
+
+        <div class="price">$240</div>
+        <a href="#" class="button bordered">buy now</a>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="outlets">
+    <div class="container">
+
+      <div class="intro">
+        <h2>outlets</h2>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, adipisci perferendis nobis.</p>
+      </div>
+
+      <div class="row clearfix">
+        <div class="col-4 outlets">
+          <h3>sydney</h3>
+          <div class="info">
+            <div class="address">Lorem ipsum dolor sit amet, consectetur.</div>
+            <div class="phone">
+              <label>phone: </label>
+              <a href="tel:+62-500-800-123">+62 500 800 123</a>
+            </div>
+            <div class="email">
+              <label>email: </label>
+              <a href="mailto:testmail@yourdomain.com">testmail@yourdomain.com</a>
+            </div>
+          </div>
+          <div class="map">
+            <a href="#" target="_blank">view map</a>
+          </div>
+        </div>
+        <div class="col-4 outlet">
+          <h3>sydney</h3>
+          <div class="info">
+            <div class="address">Lorem ipsum dolor sit amet, consectetur.</div>
+            <div class="phone">
+              <label>phone: </label>
+              <a href="tel:+62-500-800-123">+62 500 800 123</a>
+            </div>
+            <div class="email">
+              <label>email: </label>
+              <a href="mailto:testmail@yourdomain.com">testmail@yourdomain.com</a>
+            </div>
+          </div>
+          <div class="map">
+            <a href="#" target="_blank">view map</a>
+          </div>
+        </div>
+        <div class="col-4 outlet">
+          <h3>sydney</h3>
+          <div class="info">
+            <div class="address">Lorem ipsum dolor sit amet, consectetur.</div>
+            <div class="phone">
+              <label>phone: </label>
+              <a href="tel:+62-500-800-123">+62 500 800 123</a>
+            </div>
+            <div class="email">
+              <label>email: </label>
+              <a href="mailto:testmail@yourdomain.com">testmail@yourdomain.com</a>
+            </div>
+          </div>
+          <div class="map">
+            <a href="#" target="_blank">view map</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Admin::ProductsController, type: :request do
   before { signin_user(admin: true) }
   let!(:product) { create :product }
-  let(:params) { { product: { name: 'new product', description: 'new description', price: 100, vip_price: 90 } } } 
+  let(:params) { { product: { name: 'new product', description: 'new description', price: 100, vip_price: 90 } } }
   let(:file) { File.open(Rails.root.join('spec', 'fixtures', ['product_pic.jpg', 'product_pic1.jpg', 'product_pic2.jpg'].sample)) }
   describe '#index' do
     subject! { get '/admin/products' }
@@ -50,7 +50,7 @@ describe Admin::ProductsController, type: :request do
 
     context 'delete pic' do
       let!(:pic) { create :pic, item: product }
-      let(:pic_attributes) { { product: { pics_attributes: {'0' => { _destroy: true, id: pic.id } } } } }
+      let(:pic_attributes) { { product: { pics_attributes: { '0' => { _destroy: true, id: pic.id } } } } }
       subject { put "/admin/products/#{product.id}", params: params.deep_merge(pic_attributes) }
 
       it {
@@ -63,7 +63,7 @@ describe Admin::ProductsController, type: :request do
 
     context 'add pic' do
       let!(:pic) { create :pic, item: product }
-      let(:pic_attributes) { { product: { pics_attributes: {'0' => { file: file } } } } }
+      let(:pic_attributes) { { product: { pics_attributes: { '0' => { file: file } } } } }
       subject { put "/admin/products/#{product.id}", params: params.deep_merge(pic_attributes) }
 
       it {
@@ -77,7 +77,7 @@ describe Admin::ProductsController, type: :request do
 
   describe '#create' do
     context 'success' do
-      subject { post "/admin/products", params: params }
+      subject { post '/admin/products', params: params }
 
       it {
         expect { subject }.to change { Product.count }.by(1)
@@ -90,8 +90,8 @@ describe Admin::ProductsController, type: :request do
 
     context 'add pic' do
       let!(:pic) { create :pic, item: product }
-      let(:pic_attributes) { { product: { pics_attributes: {'0' => { file: file } } } } }
-      subject { post "/admin/products", params: params.deep_merge(pic_attributes) }
+      let(:pic_attributes) { { product: { pics_attributes: { '0' => { file: file } } } } }
+      subject { post '/admin/products', params: params.deep_merge(pic_attributes) }
 
       it {
         expect { subject }.to change { Product.count }.by(1)

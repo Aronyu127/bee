@@ -20,7 +20,13 @@
           <td><%= user.id %></td>
           <td><%= user.email %></td>
           <td><%= user.admin %></td>
-          <td><%= user.vip? %></td>
+          <td>
+            <% if user.vip? %>
+              <%= "true (expired_at #{user.vip_expired_at.strftime('%Y-%m-%d')})"%>
+            <%else%>
+              false
+            <%end%>
+          </td>
           <td><%= user.created_at %></td>
           <td>
             <% unless user.admin %>

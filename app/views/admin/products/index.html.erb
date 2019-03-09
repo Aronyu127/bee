@@ -25,7 +25,7 @@
             <td><%= product.description %></td>
             <td>
               <% pic = product.pics.first %>
-              <%= image_tag pic.file.middle.url if pic.present? %>
+              <%= image_tag pic.file.small.url if pic.present? %>
             </td>
             <td><%= product.price %></td>
             <td><%= product.vip_price %></td>

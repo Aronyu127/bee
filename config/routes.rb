@@ -7,4 +7,10 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :update]
     resources :products
   end
+
+  resources :users, only: [] do
+    collection do
+      put :upgrade
+    end
+  end
 end

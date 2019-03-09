@@ -33,7 +33,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # view rendering
+gem 'bootstrap-sass'
 gem 'cocoon'
+gem 'flex-slider-rails'
+gem 'font-awesome-rails'
 gem 'gentelella-rails'
 gem 'kaminari'
 gem 'simple_form'

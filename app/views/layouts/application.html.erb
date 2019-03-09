@@ -10,6 +10,68 @@
   </head>
 
   <body>
+    <div id="header">
+      <div class="container clearfix">
+        <div id="logo">
+          <img src="http://placeimg.com/112/100" alt="Massive" />
+        </div>
+
+        <div id="nav">
+          <ul class="clearfix">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to '#', class: 'link signed-in' do %>
+                  <%= current_user.vip? ? "VIP untill #{current_user.vip_expired_at.strftime('%Y-%m-%d')}" : "一般會員" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "Extend Vip", upgrade_users_path, method: :put, class: 'link' %>
+              </li>
+              <li class="boundary"><a href="#"></a></li>
+              <li>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'link' %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to 'Sign up', new_user_registration_path, class: 'link' %>
+              </li>
+              <li class="boundary"><a href="#"></a></li>
+              <li>
+                <%= link_to 'Log in', new_user_session_path, class: 'link', 'data-toggle-root-class': 'sign-in-modal-enabled'%>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <%= render partial: 'layouts/shared/flash', object: flash, as: :flash %>
+    </div>
     <%= yield %>
+
+    <div id="footer">
+      <div class="container clearfix">
+
+        <div class="logo">
+          <img src="http://placeimg.com/57/52" alt="massive" />
+        </div>
+
+        <div class="copyright">
+          <div class="title">&copy; massive 2014.</div>
+          <div class="subtitle">building your site with lots of fun</div>
+        </div>
+
+        <div class="social-media">
+          <ul class="clearfix">
+            <li><a href="#">f</a></li>
+            <li><a href="#">t</a></li>
+            <li><a href="#">d</a></li>
+            <li><a href="#">g</a></li>
+            <li><a href="#">b</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

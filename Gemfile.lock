@@ -117,8 +117,11 @@ GEM
       railties (>= 3.0.0)
     fastclick-rails (1.0.1)
     ffi (1.10.0)
+    flex-slider-rails (2.7.0)
     flot-rails (0.0.7)
       jquery-rails
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
     gentelella-rails (0.1.11)
@@ -347,6 +350,7 @@ DEPENDENCIES
   activerecord-postgis-adapter
   annotate
   bootsnap (>= 1.1.0)
+  bootstrap-sass
   capybara (>= 2.15, < 4.0)
   carrierwave
   chromedriver-helper
@@ -356,6 +360,8 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails (~> 4.10)
+  flex-slider-rails
+  font-awesome-rails
   gentelella-rails
   jbuilder (~> 2.5)
   kaminari

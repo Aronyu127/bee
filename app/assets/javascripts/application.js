@@ -11,5 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
+//= require bootstrap
+//= require jquery_ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery.flexslider
+
+
+$(document).on("turbolinks:load", function() {
+  $('.flexslider').flexslider();
+});

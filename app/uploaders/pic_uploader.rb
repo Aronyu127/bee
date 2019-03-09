@@ -49,6 +49,6 @@ class PicUploader < CarrierWave::Uploader::Base
   end
 
   version :middle do
-    process resize_to_fill: [220, 220]
+    process resize_to_fill: [370, 277]
   end
 end

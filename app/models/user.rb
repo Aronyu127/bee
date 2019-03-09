@@ -27,4 +27,9 @@ class User < ApplicationRecord
   def vip?
     vip_expired_at.present? && vip_expired_at > Time.current
   end
+
+  def extend_vip(time = 3.months)
+    origin_vip_expired_at = vip_expired_at || Time.current
+    update(vip_expired_at: origin_vip_expired_at + time)
+  end
 end

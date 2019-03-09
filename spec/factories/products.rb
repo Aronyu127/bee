@@ -16,6 +16,6 @@ FactoryBot.define do
     name 'test product'
     description 'prdouct description'
     price 150
-    vip_price 140   
+    vip_price 140
   end
 end
