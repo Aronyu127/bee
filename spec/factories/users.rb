@@ -22,5 +22,9 @@ FactoryBot.define do
     trait :admin do
       admin true
     end
+
+    trait :vip do
+      vip_expired_at Time.current + 3.months
+    end
   end
 end

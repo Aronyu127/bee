@@ -10,6 +10,12 @@ module RequestHelper
     @current_user = user if response.status == 302
   end
 
+  def signin_vip_user(user = nil, admin: false)
+    user ||= admin ? create(:user, :admin, :vip) : create(:user, :vip)
+    post '/users/sign_in', params: { user: { email: user.email, password: user.password } }
+    @current_user = user if response.status == 302
+  end
+
   def current_user
     @current_user
   end
