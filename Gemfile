@@ -36,6 +36,7 @@ gem 'devise'
 # view rendering
 gem 'bootstrap-sass'
 gem 'cocoon'
+gem 'devise-bootstrapped'
 gem 'flex-slider-rails'
 gem 'font-awesome-rails'
 gem 'gentelella-rails'

@@ -121,6 +121,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrapped (0.1.1)
     diff-lcs (1.3)
     dotenv (2.7.1)
     dotenv-rails (2.7.1)
@@ -385,6 +386,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   devise
+  devise-bootstrapped
   dotenv-rails
   factory_bot_rails (~> 4.10)
   flex-slider-rails
